@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
     'users',
 ]
 
@@ -103,6 +103,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -128,8 +135,3 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES':[
-        'rest_framework.authenitcation.TokenAuthentication',
-    ],
-}
