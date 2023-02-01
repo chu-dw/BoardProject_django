@@ -75,7 +75,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     
 
-    # def get(self, request, pk):
-    #      profile = Profile.objects.all()
-    #      serializer = ProfileSerializer(profile)
-    #      return Response(serializer.data, status=status.HTTP_200_OK)
+    def get(self, request, pk):
+         profile = Profile.objects.all()
+         serializer = ProfileSerializer(profile)
+         return Response(serializer.data, status=status.HTTP_200_OK)

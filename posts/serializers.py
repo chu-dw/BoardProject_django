@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from users.serailizers import ProfileSerializer
+from users.serializers import ProfileSerializer
 from .models import Post
 
-class PostSerializer(serializer.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer(read_only=True)
 
     class Meta:
@@ -12,8 +12,7 @@ class PostSerializer(serializer.ModelSerializer):
 
 
 
-class PostCreateSerializer(serializer.MoedeSerializer):
+class PostCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ("title", "category", "body", "image")
-        
